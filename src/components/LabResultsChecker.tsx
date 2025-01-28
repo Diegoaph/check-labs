@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { jsPDF } from 'jspdf';import styles from '../styles/LabResultsChecker.module.css';
+import { jsPDF } from 'jspdf';
+import styles from '../styles/LabResultsChecker.module.css';
 import type { Test } from '../types';
 import { labTests } from '../utils/data';
 import icon from '../../public/blood_icon.png';
@@ -182,7 +183,6 @@ export default function LabResultsChecker() {
           ))}
         </div>
         <div className={styles.headerWrapper}>
-         
           <button
             onClick={generatePDF}
             className={styles.generateButton}>
