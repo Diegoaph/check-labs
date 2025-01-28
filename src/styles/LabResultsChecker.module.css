@@ -61,7 +61,8 @@
   align-items: center;
   justify-content: space-evenly;
   gap: 1rem;
-}.headerWrapper {
+}
+.headerWrapper {
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -84,9 +85,28 @@
   font-size: 0.875rem;
 }
 .nameInput {
-  margin:0 auto;
+  margin: 0 auto;
   width: 80%;
   font-size: 01.5rem;
+}
+.footer 
+  {
+  display: block;
+  margin: 1.5rem auto;
+  padding: 0.5rem;
+  background-color: rgba(30, 143, 255, 0.637);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  justify-content: center;
+  align-items: center;
+}
+.sign{
+  display: flex;
+  margin: 0 auto;
+width: max-content;
 }
 
 .input:focus {

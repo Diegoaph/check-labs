@@ -5,7 +5,7 @@ import type { Test } from '../types';
 import { labTests } from '../utils/data';
 import icon from '../../public/blood_icon.png';
 type TestResult = number | { [key: string]: number };
-
+const sign: string = 'Desarrollo web: Dev.DiegoPacheco@Gmail.com'
 export default function LabResultsChecker() {
   const [results, setResults] = useState<{ [key: string]: TestResult }>({});
   const [patientName, setPatientName] = useState('');
@@ -97,11 +97,11 @@ export default function LabResultsChecker() {
     doc.text(
       `${patientName} - ${currentDate}`,
       doc.internal.pageSize.getWidth() / 2,
-      doc.internal.pageSize.getHeight() - 10,
+      doc.internal.pageSize.getHeight() - 15,
       { align: 'center' }
     );
     doc.text(
-      `Desarrollo web: Dev.DiegoPacheco@Gmail.com`,
+      `${sign}`,
       doc.internal.pageSize.getWidth() / 2,
       doc.internal.pageSize.getHeight() - 10
     );
@@ -202,6 +202,19 @@ export default function LabResultsChecker() {
           </button>
         </div>
       </div>
+      <footer className={styles.footer}>
+        <small
+          className={styles.sign}
+          title='Haz clic para contratar servicios de desarrollo web'
+          onClick={() => {
+            window.alert(
+              '¿Necesitas un sitio web profesional? ¡Contrata nuestros servicios de desarrollo web!, para mas informacion escribenos a Dev.DiegoPacheco@Gmail.com'
+            );
+            // window.location.href = 'mailto:dev.diegopachecp@gmail.com';
+          }}>
+          {sign}
+        </small>
+      </footer>
     </div>
   );
 }
