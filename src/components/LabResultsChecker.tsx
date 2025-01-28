@@ -100,6 +100,11 @@ export default function LabResultsChecker() {
       doc.internal.pageSize.getHeight() - 10,
       { align: 'center' }
     );
+    doc.text(
+      `Desarrollo web: Dev.DiegoPacheco@Gmail.com`,
+      doc.internal.pageSize.getWidth() / 2,
+      doc.internal.pageSize.getHeight() - 10
+    );
 
     doc.save('resumen_laboratorio.pdf');
   };
@@ -115,7 +120,7 @@ export default function LabResultsChecker() {
             alt='blood_icon'
           />
         </div>
-        <div className={styles.headerInputWrapper}>
+        <div className={styles.headerWrapper}>
           <input
             type='text'
             placeholder='Nombre del paciente'
@@ -123,6 +128,8 @@ export default function LabResultsChecker() {
             value={patientName}
             onChange={handleNameChange}
           />
+        </div>
+        <div className={styles.headerInputWrapper}>
           <button
             onClick={generatePDF}
             className={styles.generateButton}>
