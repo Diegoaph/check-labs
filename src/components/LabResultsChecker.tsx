@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { jsPDF } from 'jspdf';import styles from '../styles/LabResultsChecker.module.css';
 import type { Test } from '../types';
 import { labTests } from '../utils/data';
-
+import icon from '../../public/blood_icon.png';
 type TestResult = number | { [key: string]: number };
 
 export default function LabResultsChecker() {
@@ -110,7 +110,7 @@ export default function LabResultsChecker() {
           <h1 className={styles.title}>Laboratorio de Análisis Clínicos </h1>{' '}
           <img
             className={styles.icon}
-            src='../../public/blood_icon.png'
+            src={icon}
             alt='blood_icon'
           />
         </div>
