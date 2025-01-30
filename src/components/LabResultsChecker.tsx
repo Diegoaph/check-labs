@@ -5,7 +5,7 @@ import type { Test } from '../types';
 import { labTests } from '../utils/data';
 import icon from '../../public/blood_icon.png';
 type TestResult = number | { [key: string]: number };
-const sign: string = 'Desarrollo web: Dev.DiegoPacheco@Gmail.com'
+const sign: string = 'Desarrollo web: Dev.DiegoPacheco@Gmail.com';
 export default function LabResultsChecker() {
   const [results, setResults] = useState<{ [key: string]: TestResult }>({});
   const [patientName, setPatientName] = useState('');
@@ -112,35 +112,38 @@ export default function LabResultsChecker() {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.headerWrapper}>
-          <h1 className={styles.title}>Laboratorio de Análisis Clínicos </h1>{' '}
-          <img
-            className={styles.icon}
-            src={icon}
-            alt='blood_icon'
-          />
+        <div className={styles.listItem}>
+          <div className={styles.headerWrapper}>
+            <h1 className={styles.title}>Laboratorio de Análisis Clínicos </h1>{' '}
+            <img
+              className={styles.icon}
+              src={icon}
+              alt='blood_icon'
+            />
+          </div>
+          <div className={styles.headerWrapper}>
+            <input
+              type='text'
+              placeholder='Nombre del paciente'
+              className={`${styles.input} ${styles.nameInput}`}
+              value={patientName}
+              onChange={handleNameChange}
+            />
+          </div>
+          <div className={styles.headerInputWrapper}>
+            <button
+              onClick={generatePDF}
+              className={styles.generateButton}>
+              Generar Resumen PDF
+            </button>
+            <button
+              onClick={resetValues}
+              className={styles.resetButton}>
+              Reiniciar Valores
+            </button>
+          </div>
         </div>
-        <div className={styles.headerWrapper}>
-          <input
-            type='text'
-            placeholder='Nombre del paciente'
-            className={`${styles.input} ${styles.nameInput}`}
-            value={patientName}
-            onChange={handleNameChange}
-          />
-        </div>
-        <div className={styles.headerInputWrapper}>
-          <button
-            onClick={generatePDF}
-            className={styles.generateButton}>
-            Generar Resumen PDF
-          </button>
-          <button
-            onClick={resetValues}
-            className={styles.resetButton}>
-            Reiniciar Valores
-          </button>
-        </div>
+        <br />
         <div className={styles.card}>
           {labTests.map((test) => (
             <section
@@ -189,32 +192,35 @@ export default function LabResultsChecker() {
             </section>
           ))}
         </div>
-        <div className={styles.headerWrapper}>
-          <button
-            onClick={generatePDF}
-            className={styles.generateButton}>
-            Generar Resumen PDF
-          </button>
-          <button
-            onClick={resetValues}
-            className={styles.resetButton}>
-            Reiniciar Valores
-          </button>
+        <br />
+        <div className={styles.listItem}>
+          <div className={styles.headerWrapper}>
+            <button
+              onClick={generatePDF}
+              className={styles.generateButton}>
+              Generar Resumen PDF
+            </button>
+            <button
+              onClick={resetValues}
+              className={styles.resetButton}>
+              Reiniciar Valores
+            </button>
+          </div>
         </div>
+        <footer className={styles.footer}>
+          <small
+            className={styles.sign}
+            title='Haz clic para contratar servicios de desarrollo web'
+            onClick={() => {
+              window.alert(
+                '¿Necesitas un sitio web profesional? ¡Contrata nuestros servicios de desarrollo web!, para mas informacion escribenos a Dev.DiegoPacheco@Gmail.com'
+              );
+              // window.location.href = 'mailto:dev.diegopachecp@gmail.com';
+            }}>
+            {sign}
+          </small>
+        </footer>
       </div>
-      <footer className={styles.footer}>
-        <small
-          className={styles.sign}
-          title='Haz clic para contratar servicios de desarrollo web'
-          onClick={() => {
-            window.alert(
-              '¿Necesitas un sitio web profesional? ¡Contrata nuestros servicios de desarrollo web!, para mas informacion escribenos a Dev.DiegoPacheco@Gmail.com'
-            );
-            // window.location.href = 'mailto:dev.diegopachecp@gmail.com';
-          }}>
-          {sign}
-        </small>
-      </footer>
     </div>
   );
 }

@@ -1,6 +1,9 @@
 .container {
   min-height: 100vh;
-  background: radial-gradient(wheat, lavender);
+  background: radial-gradient(circle, #4f46e4 10%, transparent 11%),radial-gradient(circle at bottom left, #4f46e4 5%, transparent 6%),radial-gradient(circle at bottom right, #4f46e4 5%, transparent 6%),radial-gradient(circle at top left, #4f46e4 5%, transparent 6%),radial-gradient(circle at top right, #4f46e4 5%, transparent 6%);
+        background-size: 5em 5em;
+        background-color: #ffffff;
+        opacity: 1;
   padding: 3rem 1rem;
 }
 
